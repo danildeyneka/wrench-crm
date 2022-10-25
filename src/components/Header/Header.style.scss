@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--base-color);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  color: #FFFFFF;
+
+  &__block{
+    margin: 0 32px;
+  }
+
+  &__img {
+    margin-top: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  &__title {
+    margin-left: 16px;
+    position: relative;
+    bottom: 16px;
+  }
+}
