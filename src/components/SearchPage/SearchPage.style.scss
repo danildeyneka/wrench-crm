@@ -1,4 +1,6 @@
 .search {
+  margin-bottom: 32px;
+
   &__title {
     font-weight: 700;
     font-size: 26px;
@@ -140,6 +142,7 @@
   .search {
     width: 376px;
     margin: 0 auto;
+
     &__input {
       width: 376px;
     }

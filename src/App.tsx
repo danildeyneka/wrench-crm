@@ -13,7 +13,7 @@ export const App: FC = () => {
     return <>
         <Header/>
         <Navbar/>
-        <main className='main-content'>
+        <main className="main-content">
             <Routes>
                 <Route path="/" element={<NewsPage/>}/>
                 <Route path="address" element={<SearchPage/>}/>
