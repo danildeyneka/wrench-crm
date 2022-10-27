@@ -1,0 +1,36 @@
+.news {
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &__update {
+    height: 24px;
+    margin: 16px 0 24px 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__article {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    height: calc(100vh - 208px);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .news {
+    margin-left: -300px;
+  }
+}
+
+@media (max-width: 757px) {
+  .news {
+    margin-left: 32px;
+  }
+}

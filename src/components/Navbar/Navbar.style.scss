@@ -1,0 +1,109 @@
+.nav {
+  width: 300px;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 5px rgba(2, 0, 96, 0.25);
+  color: #1C1C1E;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+  overflow-x: hidden;
+
+  &__title {
+    font-weight: 700;
+    display: block;
+    margin: 24px 0 32px 32px;
+  }
+
+  ul {
+    margin: 32px 0 0 32px;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      height: 32px;
+      margin-bottom: 40px;
+
+      &:nth-child(9) {
+        margin-bottom: 59px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    position: relative;
+    bottom: 8px;
+
+    &:visited {
+      color: #1C1C1E;
+    }
+  }
+
+  &__settings-icon {
+    margin-left: 69px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  &__dropdown {
+    display: none;
+    margin-left: 46px;
+  }
+
+  &__dropdown-text {
+    display: block;
+    width: 120px;
+    position: relative;
+    bottom: 43px;
+    left: 46px;
+  }
+
+  &__active {
+    display: none;
+    position: relative;
+    height: 37px;
+    width: 4px;
+    background: #4F27BF;
+    top: -36px;
+    left: 264px;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.last-dropdown {
+  position: relative;
+  top: 8px;
+}
+
+// active link indicator
+.active ~ span {
+  display: block;
+}
+
+.active-settings {
+  display: block;
+}
+
+.settings-link {
+  cursor: pointer;
+}
+
+.reverse-settings-icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}

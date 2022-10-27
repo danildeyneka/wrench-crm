@@ -1,5 +1,14 @@
 :root {
- --base-color: #4F27BF;
+  --base-color: #4F27BF;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 127px #4F27BF;
+  border-radius: 5px;
 }

@@ -4,8 +4,14 @@
   display: flex;
   justify-content: space-between;
   color: #FFFFFF;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 
-  &__block{
+  &__block {
     margin: 0 32px;
   }
 
@@ -16,8 +22,49 @@
   }
 
   &__title {
-    margin-left: 16px;
+    margin-left: 24px;
     position: relative;
-    bottom: 16px;
+    bottom: 17px;
+  }
+}
+
+.last-title {
+  margin-left: 16px;
+}
+
+@media (max-width: 757px) {
+  .header {
+    &__title {
+      display: inline-block;
+      width: 70px;
+      bottom: 4px;
+      padding-right: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 424px) {
+  .header {
+    &__title {
+      width: 26px;
+      right: 38px;
+    }
+
+    &__img {
+      padding-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    &__title {
+      top: 20px;
+    }
+
+    &__img {
+      display: none;
+    }
   }
 }
