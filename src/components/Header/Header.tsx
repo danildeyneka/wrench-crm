@@ -6,11 +6,11 @@ export const Header: FC = () => {
 
     return <header className="header">
         <div className="header__block">
-            <WrenchLogoSVG className="header__img"/>
+            <WrenchLogoSVG/>
             <span className="header__title">Wrench CRM</span>
         </div>
         <div className="header__block">
-            <LoggedPersonSVG className="header__img"/>
+            <LoggedPersonSVG/>
             <span className="header__title last-title">Имя Фамилия</span>
         </div>
     </header>

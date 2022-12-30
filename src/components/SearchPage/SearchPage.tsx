@@ -1,8 +1,8 @@
 import {ChangeEvent, FC, useState} from 'react'
 import './SearchPage.style.scss'
-import {apiBaseUrl, apiToken} from '../../api/api'
 import {queryType} from '../../types/searchTypes'
 import {MainSearchSVG} from '../../assets/svgsInJs/svgsInJs'
+import {fetchQuery} from '../../services/api'
 
 export const SearchPage: FC = () => {
     const [query, setQuery] = useState<string>('')
@@ -12,26 +12,10 @@ export const SearchPage: FC = () => {
         setQuery(e.target.value)
     }
 
-    const fetchQuery = (query: string) => {
-        const options = {
-            method: 'POST',
-            mode: 'cors' as RequestMode,
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': 'Token ' + apiToken
-            },
-            body: JSON.stringify({query: query, count: 12})
-        }
-        fetch(apiBaseUrl, options)
-            .then(async res => JSON.parse(await res.text()))
-            .then(result => setResult(result.suggestions))
-            .catch(e => console.error(e))
-    }
-
     const handleSearch = async () => {
         if (query.length <= 3) return alert('Введите запрос более 3-х символов')
-        await fetchQuery(query)
+        const res: Array<queryType> = await fetchQuery(query)
+        setResult(res)
     }
 
     const mappedResult = result?.map((item, id) => (<p className="search__data" key={id}
@@ -43,7 +27,7 @@ export const SearchPage: FC = () => {
         <input className="search__input" type="text" value={query} onChange={onSearchChange}
                placeholder="Введите интересующий вас адрес"/>
         <button className="search__button" type="button" onClick={handleSearch}>
-            <MainSearchSVG className="search__icon"/>
+            <MainSearchSVG/>
             <span>Поиск</span>
         </button>
         <div className="search__results">
